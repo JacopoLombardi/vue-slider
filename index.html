@@ -62,24 +62,12 @@
 
 
 
-                                 <div class="my-thumbnail active">
-                                    <img class="img-fluid" src="http://www.viaggiareonline.it/wp-content/uploads/2014/11/sweden_148857365.jpg" alt="Thumbnail of Svezia picture">
-                                </div>
-
-                                <div class="my-thumbnail">
-                                    <img class="img-fluid" src="http://www.viaggiareonline.it/wp-content/uploads/2014/11/sweden_148857365.jpg" alt="Thumbnail of Svezia picture">
-                                </div>
-
-                                <div class="my-thumbnail">
-                                    <img class="img-fluid" src="http://www.viaggiareonline.it/wp-content/uploads/2014/11/sweden_148857365.jpg" alt="Thumbnail of Svezia picture">
-                                </div>
-
-                                <div class="my-thumbnail">
-                                    <img class="img-fluid" src="http://www.viaggiareonline.it/wp-content/uploads/2014/11/sweden_148857365.jpg" alt="Thumbnail of Svezia picture">
-                                </div>
-
-                                <div class="my-thumbnail">
-                                    <img class="img-fluid" src="http://www.viaggiareonline.it/wp-content/uploads/2014/11/sweden_148857365.jpg" alt="Thumbnail of Svezia picture">
+                                 <div 
+                                    v-for="(url, i) in urlArray" 
+                                    :class="{'active': i === indice}" 
+                                    class="my-thumbnail"
+                                    >
+                                    <img class="img-fluid" :src="url">
                                 </div>
 
 
@@ -89,9 +77,7 @@
                                     <span class="my-next-hook"></span>
                                 </div>
 
-
                             </div>
-
 
                         </div>
                     </div>

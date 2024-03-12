@@ -62,7 +62,7 @@ createApp({
         },
 
 
-        
+
         nextOrPrev(value){
             // controllo se abbiamo cliccato il pulsate next o prev
             if(value === true){
@@ -81,6 +81,14 @@ createApp({
             };
         },
 
+
+        // auto play dello slider
+        autoPlay(){
+            setInterval( () => {
+                this.nextOrPrev(true);
+            }, 3000);
+        }
+
     },
     
 
@@ -91,7 +99,7 @@ createApp({
     mounted(){
 
         this.pushIn();
-
+        this.autoPlay();
     }
 
 

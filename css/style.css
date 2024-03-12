@@ -100,7 +100,7 @@ div#my-carousel .my-thumbnails .my-thumbnail{
 
 div#my-carousel .my-thumbnails .my-thumbnail img{
     height: 100%;
-    width: 100%;
+    width: calc(1300px /5);
 }
 
 div#my-carousel .my-thumbnails .my-thumbnail.active{
