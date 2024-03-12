@@ -25,8 +25,8 @@
 </head>
 <body>
 
-    <main>
-        <div id="app">
+    <div id="app">
+        <main>
             <div class="container-fluid p-5">
                 <div class="row text-center">
                     
@@ -37,11 +37,11 @@
                             <!-- container cards -->
                             <div class="_outputcard  my-carousel-images">
 
-                                <div class="_card  my-carousel-item">
-                                    <img class="img-fluid" src="">
+                                <div v-for="object in objectArray" class="_card  my-carousel-item active">
+                                    <img class="img-fluid" :src="object.url">
                                     <div class="item-description px-3">
-                                        <h2></h2>
-                                        <p></p>
+                                        <h2>{{object.title}}</h2>
+                                        <p>{{object.description}}</p>
                                     </div>
                                 </div>
 
@@ -49,11 +49,17 @@
 
                             
 
+
+
+
+
+                            
+
                             <!-- thumbnails & btn -->
                             <div class="my-thumbnails position-relative">
 
                                 <!-- btn prev -->
-                                <div class="my-previous position-absolute">
+                                <div @click="nextOrPrev(false)" class="my-previous position-absolute">
                                     <span class="my-prev-hook"></span>
                                 </div>
 
@@ -82,7 +88,7 @@
 
 
                                 <!-- btn next -->
-                                <div class="my-next position-absolute">
+                                <div @click="nextOrPrev(true)" class="my-next position-absolute">
                                     <span class="my-next-hook"></span>
                                 </div>
 
@@ -94,8 +100,8 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </main>
+        </main>
+    </div>
 
     <script type="text/javascript" src="js/script.js"></script>
 </body>

@@ -1,10 +1,10 @@
 
-const{createApp} = Vue;
+const {createApp} = Vue;
 
 createApp({
     data(){
         return{
-            objectArray: [
+            objectArray:[
                 {
                     url: 'http://www.viaggiareonline.it/wp-content/uploads/2014/11/sweden_148857365.jpg',
                     title: 'Svezia',
@@ -29,18 +29,30 @@ createApp({
                     url: 'https://cdn.sanity.io/images/24oxpx4s/prod/ed09eff0362396772ad50ec3bfb728d332eb1c30-3200x2125.jpg?w=1600&h=1063&fit=crop',
                     title: 'Colombia',
                     description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam.'
-                },
-            ]
+                }
+            ],
 
+
+            indice: 0,
 
         }
     },
 
 
 
+    
+
 
     methods:{
 
+        nextOrPrev(value){
+            if(value === true){
+                this.indice++;
+            }else{
+                this.indice--;
+            };
+            console.log(this.indice)
+        }
 
 
         
@@ -50,11 +62,14 @@ createApp({
 
 
 
+
+
     mounted(){
 
 
     }
-});
+
+}).mount('#app');
 
 
 
