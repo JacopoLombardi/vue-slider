@@ -35,7 +35,6 @@ createApp({
                 }
             ],
 
-
             indice: 0,
 
             urlArray: [],
@@ -60,20 +59,16 @@ createApp({
                 this.urlArray.push(element.url);
                 this.titleArray.push(element.title);
                 this.descriptionArray.push(element.description);
-            })
+            });
         },
 
 
 
         nextOrPrev(value){
             // controllo se abbiamo cliccato il pulsate next o prev
-            if(value === true){
-                this.indice++;
-            }else{
-                this.indice--;
-            };
+            // se 'value' è 'true'... indice incrementa, altrimenti decrementa
+            value ? this.indice++ : this.indice--;
 
-            console.log(this.indice)
 
             // controllo che indice abbia un valore compreso tra 0 e 5
             if(this.indice === this.objectArray.length){
@@ -83,18 +78,17 @@ createApp({
             };
         },
 
-        
-        // auto play dello slider con il controllo del cursore
+
+
+        // autoplay dello slider con il controllo del cursore
         autoPlay(){
             setInterval( () => {
                 if(!this.userActivit){
                     this.nextOrPrev(true);
-                }
+                };
             }, 3000);
         },
     },
-    
-
 
 
 
@@ -107,106 +101,3 @@ createApp({
 
 
 }).mount('#app');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// // input btn
-// const btnPrev = document.querySelector('.my-previous');
-// const btnNext = document.querySelector('.my-next');
-
-
-// // output delle cards
-// const outputcard = document.querySelector('._outputcard');
-
-
-// let counter = 0;
-
-
-
-// // con 'for of' seleziono tutti gli oggetti e le loro proprietà
-// for(object of objectArray){
-
-//     outputcard.innerHTML += `
-    
-//     <div class="_card  d-none  my-carousel-item active">
-//         <img class="img-fluid" src="${object.url}">
-//         <div class="item-description px-3">
-//             <h2>${object.title}</h2>
-//             <p>${object.description}</p>
-//         </div>
-//     </div> 
-    
-//     `;
-// };
-
-
-
-
-// // seleziono tutte le cards richiamando la classe _card e le metto dentro un array
-// const cardsHtmlArray = document.querySelectorAll('._card');
-
-// // mostro subito la prima card
-// cardsHtmlArray[0].classList.remove('d-none');
-
-
-
-
-// setInterval(next, 2000);
-
-
-
-
-// btnNext.addEventListener('click', next);
-
-
-// btnPrev.addEventListener('click', prev);
-
-
-
-
-
-// // funzione che mostra l'immagine successiva e controlla i pulsanti
-// function next(){
-
-//     cardsHtmlArray[counter].classList.toggle('d-none');    // nascondo l'immagine corrente
-//     counter++;
-
-//     // se il contatore ha raggiunto l'ultima immagine, nascondi ArrowUp
-//     if(counter === cardsHtmlArray.length){
-//        counter = 0;
-//     }
-
-//     cardsHtmlArray[counter].classList.toggle('d-none');    // mostro l'immagine successiva
-//  }
-
-
-
-
-
-
-// // funzione che mostra l'immagine precedente e controlla i pulsanti
-//  function prev(){
-    
-//     cardsHtmlArray[counter].classList.toggle('d-none');    // nascondo l'immagine corrente
-
-//     // se il counter è minore di 0
-//     if(counter === 0){
-//         counter = cardsHtmlArray.length;
-//     }
-
-//     counter--;
-//     cardsHtmlArray[counter].classList.remove('d-none');    // mostro l'immagine successiva
-//  }
