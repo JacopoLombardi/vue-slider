@@ -40,7 +40,9 @@ createApp({
 
             urlArray: [],
             titleArray: [],
-            descriptionArray: []
+            descriptionArray: [],
+
+            userActivit: false,
         }
     },
 
@@ -81,17 +83,17 @@ createApp({
             };
         },
 
-
-        // auto play dello slider
+        
+        // auto play dello slider con il controllo del cursore
         autoPlay(){
             setInterval( () => {
-                this.nextOrPrev(true);
+                if(!this.userActivit){
+                    this.nextOrPrev(true);
+                }
             }, 3000);
-        }
-
+        },
     },
     
-
 
 
 
