@@ -1,9 +1,12 @@
 
 const {createApp} = Vue;
 
+
 createApp({
+
     data(){
         return{
+
             objectArray:[
                 {
                     url: 'http://www.viaggiareonline.it/wp-content/uploads/2014/11/sweden_148857365.jpg',
@@ -35,24 +38,46 @@ createApp({
 
             indice: 0,
 
+            urlArray: [],
         }
     },
 
 
 
-    
+
 
 
     methods:{
 
+        pushInUrl(){
+            this.objectArray.forEach((element) => {
+                this.urlArray.push(element.url);
+                console.log(this.urlArray)
+            })
+        },
+
+
+
+
+
+
         nextOrPrev(value){
+            // controllo se abbiamo cliccato il pulsate next o prev
             if(value === true){
                 this.indice++;
             }else{
                 this.indice--;
             };
+
             console.log(this.indice)
-        }
+
+            // controllo che indice abbia un valore compreso tra 0 e 5
+            if(this.indice === this.objectArray.length){
+                this.indice = 0;
+            }else if(this.indice < 0){
+                this.indice = this.objectArray.length - 1;
+            };
+        },
 
 
         
@@ -66,6 +91,7 @@ createApp({
 
     mounted(){
 
+        this.pushInUrl();
 
     }
 

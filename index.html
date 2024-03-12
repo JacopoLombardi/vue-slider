@@ -35,13 +35,13 @@
                         <div class="my-carousel-container d-flex flex-column px-5" id="my-carousel">
 
                             <!-- container cards -->
-                            <div class="_outputcard  my-carousel-images">
+                            <div class="my-carousel-images">
 
-                                <div v-for="object in objectArray" class="_card  my-carousel-item active">
-                                    <img class="img-fluid" :src="object.url">
+                                <div class="my-carousel-item active">
+                                    <img class="img-fluid" :src="urlArray[indice]">
                                     <div class="item-description px-3">
-                                        <h2>{{object.title}}</h2>
-                                        <p>{{object.description}}</p>
+                                        <h2></h2>
+                                        <p></p>
                                     </div>
                                 </div>
 
@@ -53,7 +53,7 @@
 
 
 
-                            
+
 
                             <!-- thumbnails & btn -->
                             <div class="my-thumbnails position-relative">
