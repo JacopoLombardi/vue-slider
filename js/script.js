@@ -39,6 +39,8 @@ createApp({
             indice: 0,
 
             urlArray: [],
+            titleArray: [],
+            descriptionArray: []
         }
     },
 
@@ -49,18 +51,18 @@ createApp({
 
     methods:{
 
-        pushInUrl(){
+        // pusho gli Url - title - description in 3 array separati
+        pushIn(){
             this.objectArray.forEach((element) => {
+                
                 this.urlArray.push(element.url);
-                console.log(this.urlArray)
+                this.titleArray.push(element.title);
+                this.descriptionArray.push(element.description);
             })
         },
 
 
-
-
-
-
+        
         nextOrPrev(value){
             // controllo se abbiamo cliccato il pulsate next o prev
             if(value === true){
@@ -79,9 +81,6 @@ createApp({
             };
         },
 
-
-        
-
     },
     
 
@@ -91,9 +90,11 @@ createApp({
 
     mounted(){
 
-        this.pushInUrl();
+        this.pushIn();
 
     }
+
+
 
 }).mount('#app');
 
